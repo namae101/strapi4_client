@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:strapi4_client/models/strapi_query_filter.dart';
+import 'package:strapi4_client/models/query/strapi_query_filter.dart';
 import 'package:test/test.dart';
 
 void main() {
