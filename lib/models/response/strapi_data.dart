@@ -5,9 +5,8 @@ part 'strapi_data.g.dart';
 
 @Freezed(genericArgumentFactories: true)
 class StrapiData<T> with _$StrapiData<T> {
-  factory StrapiData({
-    required int? id,
-    required T attributes,
+  const factory StrapiData({
+    required T data,
   }) = _StrapiData;
 
   factory StrapiData.fromJson(

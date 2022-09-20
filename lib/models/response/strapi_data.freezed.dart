@@ -21,8 +21,7 @@ StrapiData<T> _$StrapiDataFromJson<T>(
 
 /// @nodoc
 mixin _$StrapiData<T> {
-  int? get id => throw _privateConstructorUsedError;
-  T get attributes => throw _privateConstructorUsedError;
+  T get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
       throw _privateConstructorUsedError;
@@ -36,7 +35,7 @@ abstract class $StrapiDataCopyWith<T, $Res> {
   factory $StrapiDataCopyWith(
           StrapiData<T> value, $Res Function(StrapiData<T>) then) =
       _$StrapiDataCopyWithImpl<T, $Res>;
-  $Res call({int? id, T attributes});
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -50,17 +49,12 @@ class _$StrapiDataCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? attributes = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      attributes: attributes == freezed
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -73,7 +67,7 @@ abstract class _$$_StrapiDataCopyWith<T, $Res>
           _$_StrapiData<T> value, $Res Function(_$_StrapiData<T>) then) =
       __$$_StrapiDataCopyWithImpl<T, $Res>;
   @override
-  $Res call({int? id, T attributes});
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -89,17 +83,12 @@ class __$$_StrapiDataCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? attributes = freezed,
+    Object? data = freezed,
   }) {
     return _then(_$_StrapiData<T>(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      attributes: attributes == freezed
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
               as T,
     ));
   }
@@ -108,20 +97,18 @@ class __$$_StrapiDataCopyWithImpl<T, $Res>
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
 class _$_StrapiData<T> implements _StrapiData<T> {
-  _$_StrapiData({required this.id, required this.attributes});
+  const _$_StrapiData({required this.data});
 
   factory _$_StrapiData.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$$_StrapiDataFromJson(json, fromJsonT);
 
   @override
-  final int? id;
-  @override
-  final T attributes;
+  final T data;
 
   @override
   String toString() {
-    return 'StrapiData<$T>(id: $id, attributes: $attributes)';
+    return 'StrapiData<$T>(data: $data)';
   }
 
   @override
@@ -129,17 +116,13 @@ class _$_StrapiData<T> implements _StrapiData<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StrapiData<T> &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.attributes, attributes));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(attributes));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -153,17 +136,14 @@ class _$_StrapiData<T> implements _StrapiData<T> {
 }
 
 abstract class _StrapiData<T> implements StrapiData<T> {
-  factory _StrapiData({required final int? id, required final T attributes}) =
-      _$_StrapiData<T>;
+  const factory _StrapiData({required final T data}) = _$_StrapiData<T>;
 
   factory _StrapiData.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =
       _$_StrapiData<T>.fromJson;
 
   @override
-  int? get id;
-  @override
-  T get attributes;
+  T get data;
   @override
   @JsonKey(ignore: true)
   _$$_StrapiDataCopyWith<T, _$_StrapiData<T>> get copyWith =>

@@ -11,7 +11,7 @@ _$_StrapiError _$$_StrapiErrorFromJson(Map<String, dynamic> json) =>
       status: json['status'] as int,
       name: json['name'] as String,
       message: json['message'] as String,
-      details: json['details'] as Map<String, dynamic>,
+      details: json['details'],
     );
 
 Map<String, dynamic> _$$_StrapiErrorToJson(_$_StrapiError instance) =>

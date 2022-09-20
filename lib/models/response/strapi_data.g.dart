@@ -11,8 +11,7 @@ _$_StrapiData<T> _$$_StrapiDataFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     _$_StrapiData<T>(
-      id: json['id'] as int?,
-      attributes: fromJsonT(json['attributes']),
+      data: fromJsonT(json['data']),
     );
 
 Map<String, dynamic> _$$_StrapiDataToJson<T>(
@@ -20,6 +19,5 @@ Map<String, dynamic> _$$_StrapiDataToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'id': instance.id,
-      'attributes': toJsonT(instance.attributes),
+      'data': toJsonT(instance.data),
     };

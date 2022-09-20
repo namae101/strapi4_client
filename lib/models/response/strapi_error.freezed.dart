@@ -23,7 +23,7 @@ mixin _$StrapiError {
   int get status => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  Map<String, dynamic> get details => throw _privateConstructorUsedError;
+  dynamic get details => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,8 +36,7 @@ abstract class $StrapiErrorCopyWith<$Res> {
   factory $StrapiErrorCopyWith(
           StrapiError value, $Res Function(StrapiError) then) =
       _$StrapiErrorCopyWithImpl<$Res>;
-  $Res call(
-      {int status, String name, String message, Map<String, dynamic> details});
+  $Res call({int status, String name, String message, dynamic details});
 }
 
 /// @nodoc
@@ -71,7 +70,7 @@ class _$StrapiErrorCopyWithImpl<$Res> implements $StrapiErrorCopyWith<$Res> {
       details: details == freezed
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as dynamic,
     ));
   }
 }
@@ -83,8 +82,7 @@ abstract class _$$_StrapiErrorCopyWith<$Res>
           _$_StrapiError value, $Res Function(_$_StrapiError) then) =
       __$$_StrapiErrorCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int status, String name, String message, Map<String, dynamic> details});
+  $Res call({int status, String name, String message, dynamic details});
 }
 
 /// @nodoc
@@ -118,9 +116,9 @@ class __$$_StrapiErrorCopyWithImpl<$Res> extends _$StrapiErrorCopyWithImpl<$Res>
           : message // ignore: cast_nullable_to_non_nullable
               as String,
       details: details == freezed
-          ? _value._details
+          ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as dynamic,
     ));
   }
 }
@@ -132,8 +130,7 @@ class _$_StrapiError implements _StrapiError {
       {required this.status,
       required this.name,
       required this.message,
-      required final Map<String, dynamic> details})
-      : _details = details;
+      required this.details});
 
   factory _$_StrapiError.fromJson(Map<String, dynamic> json) =>
       _$$_StrapiErrorFromJson(json);
@@ -144,12 +141,8 @@ class _$_StrapiError implements _StrapiError {
   final String name;
   @override
   final String message;
-  final Map<String, dynamic> _details;
   @override
-  Map<String, dynamic> get details {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_details);
-  }
+  final dynamic details;
 
   @override
   bool operator ==(dynamic other) {
@@ -159,7 +152,7 @@ class _$_StrapiError implements _StrapiError {
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other._details, _details));
+            const DeepCollectionEquality().equals(other.details, details));
   }
 
   @JsonKey(ignore: true)
@@ -169,7 +162,7 @@ class _$_StrapiError implements _StrapiError {
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(message),
-      const DeepCollectionEquality().hash(_details));
+      const DeepCollectionEquality().hash(details));
 
   @JsonKey(ignore: true)
   @override
@@ -189,7 +182,7 @@ abstract class _StrapiError implements StrapiError {
       {required final int status,
       required final String name,
       required final String message,
-      required final Map<String, dynamic> details}) = _$_StrapiError;
+      required final dynamic details}) = _$_StrapiError;
 
   factory _StrapiError.fromJson(Map<String, dynamic> json) =
       _$_StrapiError.fromJson;
@@ -201,7 +194,7 @@ abstract class _StrapiError implements StrapiError {
   @override
   String get message;
   @override
-  Map<String, dynamic> get details;
+  dynamic get details;
   @override
   @JsonKey(ignore: true)
   _$$_StrapiErrorCopyWith<_$_StrapiError> get copyWith =>
