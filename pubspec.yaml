@@ -1,6 +1,8 @@
 name: strapi4_client
-description: Basic Strapi Client implemented in Dart.
+description: Basic Strapi Client implemented in Dart for interacting with Strapi v4.
 version: 0.0.1
+
+repository: https://github.com/namae101/strapi4_client
 
 environment:
   sdk: ">=2.17.0 <3.0.0"

@@ -42,7 +42,7 @@ void main() {
         'status': 0,
         'name': 'string',
         'message': 'string',
-        'details': {}
+        'details': <Map<String, dynamic>>{}
       }
     };
     test('can be instantiated from json error response', () {

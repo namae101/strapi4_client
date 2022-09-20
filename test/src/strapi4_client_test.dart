@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-import 'package:strapi4_client/models/media/strapi_media.dart';
 import 'package:strapi4_client/strapi4_client.dart';
 import 'package:test/test.dart';
 
@@ -44,7 +42,7 @@ void main() {
         id: 1,
       );
       res.fold(
-        (l) => print(l),
+        (_) => null,
         (r) {
           final file = StrapiMediaAttributes.fromJson(r!);
         },

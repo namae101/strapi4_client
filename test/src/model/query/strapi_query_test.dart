@@ -42,33 +42,6 @@ void main() {
         ),
         isNotNull,
       );
-      print(
-        StrapiQuery(
-          fields: right(['id', 'name']),
-          filters: StrapiQueryFilter(
-            filters: [
-              StrapiQueryFilter(
-                op: r'$eq',
-                attribute: 'slug',
-                value: 'id',
-              ),
-              StrapiQueryFilter(
-                op: r'$eq',
-                attribute: 'size',
-                value: 'L',
-              ),
-            ],
-          ),
-          locale: right(['en']),
-          pagination: StrapiQueryPagination(
-            pageSize: 10,
-            page: 1,
-          ),
-          populate: right(['related', 'related.component']),
-          publicationState: 'live',
-          sort: right(['id:asc']),
-        ).toStrapiQueryMap(),
-      );
     });
   });
 }

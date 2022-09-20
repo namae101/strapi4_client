@@ -9,10 +9,6 @@ void main() {
         StrapiQueryFilter(op: r'$eq', attribute: 'slug', value: 'id'),
         isNotNull,
       );
-      print(
-        StrapiQueryFilter(op: r'$eq', attribute: 'slug', value: 'id')
-            .toFilterParams(),
-      );
     });
     test('or filter with multiple attributes', () {
       expect(
@@ -24,15 +20,6 @@ void main() {
           ],
         ),
         isNotNull,
-      );
-      print(
-        StrapiQueryFilter(
-          op: r'$or',
-          filters: [
-            StrapiQueryFilter(op: r'$eq', attribute: 'slug', value: 'id'),
-            StrapiQueryFilter(op: r'$eq', attribute: 'slug', value: 'id'),
-          ],
-        ).toFilterParams(),
       );
     });
 
@@ -46,14 +33,6 @@ void main() {
         ),
         isNotNull,
       );
-      print(
-        StrapiQueryFilter(
-          filters: [
-            StrapiQueryFilter(op: r'$eq', attribute: 'slug', value: 'id'),
-            StrapiQueryFilter(op: r'$eq', attribute: 'size', value: 'L'),
-          ],
-        ).toFilterParams(),
-      );
     });
 
     test('test with value array', () {
@@ -64,13 +43,6 @@ void main() {
           value: ['id', 'id2'],
         ),
         isNotNull,
-      );
-      print(
-        StrapiQueryFilter(
-          op: r'$in',
-          attribute: 'slug',
-          value: ['id', 'id2'],
-        ).toFilterParams(),
       );
     });
   });
