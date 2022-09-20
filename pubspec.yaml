@@ -1,7 +1,6 @@
 name: strapi4_client
-description: Strapi 4 Client
-version: 1.0.0+1
-publish_to: none
+description: Basic Strapi Client implemented in Dart.
+version: 0.0.1
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
