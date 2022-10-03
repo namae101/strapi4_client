@@ -49,8 +49,9 @@ class StrapiDataRoleConverter
         json,
         (Object? json) => StrapiDataEntity<StrapiRoleAttribute>.fromJson(
           json as Map<String, dynamic>? ?? {},
-          (Object? json) =>
-              StrapiRoleAttribute.fromJson(json as Map<String, dynamic>? ?? {}),
+          (Object? json) => StrapiRoleAttribute.fromJson(
+            json as Map<String, dynamic>? ?? {},
+          ),
         ),
       );
       return data;

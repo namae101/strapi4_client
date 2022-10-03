@@ -6,7 +6,7 @@ import 'package:strapi4_client/models/response/strapi_error.dart';
 import 'package:strapi4_client/models/response/strapi_response.dart';
 
 class Strapi4Client {
-  Strapi4Client({
+  Strapi4Client._({
     required String baseUrl,
     String? token,
     BaseOptions? dioOptions,
@@ -21,6 +21,23 @@ class Strapi4Client {
       if (token != null) 'Authorization': 'Bearer $token',
     };
     _token = token;
+  }
+
+  static late Strapi4Client _strapi;
+
+  static Strapi4Client get instance => _strapi;
+
+  static Future<void> init({
+    required String baseUrl,
+    String? token,
+    BaseOptions? dioOptions,
+  }) async {
+    assert(baseUrl.isNotEmpty, 'baseUrl must not be empty');
+    _strapi = Strapi4Client._(
+      baseUrl: baseUrl,
+      token: token,
+      dioOptions: dioOptions,
+    );
   }
 
   late final String _baseUrl;

@@ -2,8 +2,12 @@ import 'package:strapi4_client/strapi4_client.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Strapi4Client', () {
-    final strapiClient = Strapi4Client(baseUrl: 'http://localhost:1337/api');
+  group('Strapi4Client', () async {
+    await Strapi4Client.init(
+      baseUrl: 'http://localhost:1337',
+    );
+
+    final strapiClient = Strapi4Client.instance;
     test('can be instantiated', () {
       expect(strapiClient, isNotNull);
     });
